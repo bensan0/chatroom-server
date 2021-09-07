@@ -14,6 +14,8 @@ func main() {
 	}
 	defer listener.Close()
 
+	go broadcaster()
+
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
